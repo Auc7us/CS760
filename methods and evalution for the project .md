@@ -1,0 +1,12 @@
+Method: should include what we plan to do 
+    - Compare input prompts [A qualitative and quantitative analysis of utilizing different prompts with the same meaning, swap words that belong to the same object from the list of the word in the word catergories and look for any biases] (How do we plan on doing this if repeatability is not a feature of the alogorithm that we are testing)
+     
+    (This seems excessive to me)
+
+Evaluation should include how well we have done them (Present one final output)
+    - take models from real world using two scanners fix the worse one and compare geometric difference btw the fixed scans and good scan [pretty much obvious but again decide the geometric difference approach to be used, simple ones should do]
+    - localized-geometric difference with the input to see which of the final generated is close to the input (if not available we will later switch to generalized ) 
+    [this would involve sematic segmentation using the set of linguistic instructions used and deleting the said parts to be modified before computing simple geometric difference (explore this more)] 
+    - Class Membership: the output should be long to the same class as the input and the output with the higher probability to be a member of that class will be considered as a better result.
+    - LAB (Linguistic Association Boost )[if the performed change brought in the intended change then the output model should have a higher visio-ingusiting association with the the prompted instruction when compared to the starting model. A trained neural listening network that finds the described target shape from the input query and can measure the association between the input and the outputs with the input prompt]. Need to find suitable neural listerners. 
+    - the geometric difference wed be using is the Earth Mover's Distance. This appracher is much better at evaluating or results as it takes a holistic approach where the whole object is taken into consideration. It calculates the amount of work needed to transofrm one point cloud to another. being highly sensitive to the distribution/ density of the points in the model, gives us a better measure of similarity that is more in line with human visual judgement.
